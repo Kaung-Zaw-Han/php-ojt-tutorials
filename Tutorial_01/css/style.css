@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1920px;
+  text-align: center;
+  background-color: red;
+}
