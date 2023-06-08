@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutorial_02</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-    <h1>Diamond Pattern</h1>
+<body class="wrapper">
+    <h1 class="ttl">Diamond Pattern</h1>
     <?php
 
     function makeDiamondShape($row)
@@ -49,86 +51,86 @@
                     }
                     break;
 
-                case 3;   
-                for ($i = 1; $i <= $row; $i++) {
+                case 3;
+                    for ($i = 1; $i <= $row; $i++) {
 
-                    for ($j = 1; $j <= (2 * $row) - 1; $j++) {
+                        for ($j = 1; $j <= (2 * $row) - 1; $j++) {
 
-                        if ($j >= $row - ($i - 3) && $j <= $row + ($i - 3)) {
-                            echo "*";
-                        } else {
-                            echo "&nbsp;&nbsp;";
+                            if ($j >= $row - ($i - 3) && $j <= $row + ($i - 3)) {
+                                echo "*";
+                            } else {
+                                echo "&nbsp;&nbsp;";
+                            }
                         }
+                        echo "<br>";
                     }
-                    echo "<br>";
-                }
-                for ($i = $row - 1; $i >= 1; $i--) {
+                    for ($i = $row - 1; $i >= 1; $i--) {
 
-                    for ($j = 1; $j <= (2 * $row) - 1; $j++) {
+                        for ($j = 1; $j <= (2 * $row) - 1; $j++) {
 
-                        if ($j >= $row - ($i - 1) && $j <= $row + ($i - 1)) {
-                            echo "*";
-                        } else {
-                            echo "&nbsp;&nbsp;";
+                            if ($j >= $row - ($i - 1) && $j <= $row + ($i - 1)) {
+                                echo "*";
+                            } else {
+                                echo "&nbsp;&nbsp;";
+                            }
                         }
+                        echo "<br>";
                     }
-                    echo "<br>";
-                }
-                break;
+                    break;
 
-                case 5;   
-                for ($i = 1; $i <= $row; $i++) {
+                case 5;
+                    for ($i = 1; $i <= $row; $i++) {
 
-                    for ($j = 1; $j <= (2 * $row) - 1; $j++) {
+                        for ($j = 1; $j <= (2 * $row) - 1; $j++) {
 
-                        if ($j >= $row - ($i - 3) && $j <= $row + ($i - 3)) {
-                            echo "*";
-                        } else {
-                            echo "&nbsp;&nbsp;";
+                            if ($j >= $row - ($i - 3) && $j <= $row + ($i - 3)) {
+                                echo "*";
+                            } else {
+                                echo "&nbsp;&nbsp;";
+                            }
                         }
+                        echo "<br>";
                     }
-                    echo "<br>";
-                }
-                for ($i = $row - 1; $i >= 1; $i--) {
+                    for ($i = $row - 1; $i >= 1; $i--) {
 
-                    for ($j = 1; $j <= (2 * $row) - 1; $j++) {
+                        for ($j = 1; $j <= (2 * $row) - 1; $j++) {
 
-                        if ($j >= $row - ($i - 3) && $j <= $row + ($i - 3)) {
-                            echo "*";
-                        } else {
-                            echo "&nbsp;&nbsp;";
+                            if ($j >= $row - ($i - 3) && $j <= $row + ($i - 3)) {
+                                echo "*";
+                            } else {
+                                echo "&nbsp;&nbsp;";
+                            }
                         }
+                        echo "<br>";
                     }
-                    echo "<br>";
-                }
-                break;
+                    break;
 
-                default;   
-                for ($i = 1; $i <= $row; $i++) {
+                default;
+                    for ($i = 1; $i <= $row; $i++) {
 
-                    for ($j = 1; $j <= (2 * $row) - 1; $j++) {
+                        for ($j = 1; $j <= (2 * $row) - 1; $j++) {
 
-                        if ($j >= $row - ($i - 2) && $j <= $row + ($i - 2)) {
-                            echo "*";
-                        } else {
-                            echo "&nbsp;&nbsp;";
+                            if ($j >= $row - ($i - 2) && $j <= $row + ($i - 2)) {
+                                echo "*";
+                            } else {
+                                echo "&nbsp;&nbsp;";
+                            }
                         }
+                        echo "<br>";
                     }
-                    echo "<br>";
-                }
-                for ($i = $row - 1; $i >= 1; $i--) {
+                    for ($i = $row - 1; $i >= 1; $i--) {
 
-                    for ($j = 1; $j <= (2 * $row) - 1; $j++) {
+                        for ($j = 1; $j <= (2 * $row) - 1; $j++) {
 
-                        if ($j >= $row - ($i - 2) && $j <= $row + ($i - 2)) {
-                            echo "*";
-                        } else {
-                            echo "&nbsp;&nbsp;";
+                            if ($j >= $row - ($i - 2) && $j <= $row + ($i - 2)) {
+                                echo "*";
+                            } else {
+                                echo "&nbsp;&nbsp;";
+                            }
                         }
+                        echo "<br>";
                     }
-                    echo "<br>";
-                }
-                break;
+                    break;
             }
         }
     }
@@ -137,5 +139,3 @@
 </body>
 
 </html>
-
-
