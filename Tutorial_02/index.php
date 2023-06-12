@@ -1,3 +1,26 @@
+<?php
+function makeDiamondShape($row)
+{
+    if (is_numeric($row) == false) {
+        echo "row parameter must be number";
+    } else if ($row % 2 == 0) {
+        echo "row parameter must be odd number";
+    } else {
+        for ($i = 0; $i < $row; $i++) {
+            $numSpaces = abs($row - 2 * $i - 1) / 2;
+            $numStars = $row - $numSpaces * 2;
+
+            for ($j = 0; $j < $numSpaces; $j++) {
+                echo "&nbsp ";
+            }
+            for ($j = 0; $j < $numStars; $j++) {
+                echo "*";
+            }
+            echo "<br/>";
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,130 +35,11 @@
 
 <body class="wrapper">
     <h1 class="ttl">Diamond Pattern</h1>
-    <?php
-
-    function makeDiamondShape($row)
-    {
-        if (is_numeric($row) == false) {
-            echo "row parameter must be number";
-        } else if ($row % 2 == 0) {
-            echo "row parameter must be odd number";
-        } else {
-
-
-            switch ($row) {
-                case 1;
-                    for ($i = 1; $i <= $row; $i++) {
-
-                        for ($j = 1; $j <= (2 * $row) - 1; $j++) {
-
-                            if ($j >= $row - ($i - 1) && $j <= $row + ($i - 1)) {
-                                echo "*";
-                            } else {
-                                echo "&nbsp;&nbsp;";
-                            }
-                        }
-                        echo "<br>";
-                    }
-                    for ($i = $row - 1; $i >= 1; $i--) {
-
-                        for ($j = 1; $j <= (2 * $row) - 1; $j++) {
-
-                            if ($j >= $row - ($i - 1) && $j <= $row + ($i - 1)) {
-                                echo "*";
-                            } else {
-                                echo "&nbsp;&nbsp;";
-                            }
-                        }
-                        echo "<br>";
-                    }
-                    break;
-
-                case 3;
-                    for ($i = 1; $i <= $row; $i++) {
-
-                        for ($j = 1; $j <= (2 * $row) - 1; $j++) {
-
-                            if ($j >= $row - ($i - 3) && $j <= $row + ($i - 3)) {
-                                echo "*";
-                            } else {
-                                echo "&nbsp;&nbsp;";
-                            }
-                        }
-                        echo "<br>";
-                    }
-                    for ($i = $row - 1; $i >= 1; $i--) {
-
-                        for ($j = 1; $j <= (2 * $row) - 1; $j++) {
-
-                            if ($j >= $row - ($i - 1) && $j <= $row + ($i - 1)) {
-                                echo "*";
-                            } else {
-                                echo "&nbsp;&nbsp;";
-                            }
-                        }
-                        echo "<br>";
-                    }
-                    break;
-
-                case 5;
-                    for ($i = 1; $i <= $row; $i++) {
-
-                        for ($j = 1; $j <= (2 * $row) - 1; $j++) {
-
-                            if ($j >= $row - ($i - 3) && $j <= $row + ($i - 3)) {
-                                echo "*";
-                            } else {
-                                echo "&nbsp;&nbsp;";
-                            }
-                        }
-                        echo "<br>";
-                    }
-                    for ($i = $row - 1; $i >= 1; $i--) {
-
-                        for ($j = 1; $j <= (2 * $row) - 1; $j++) {
-
-                            if ($j >= $row - ($i - 3) && $j <= $row + ($i - 3)) {
-                                echo "*";
-                            } else {
-                                echo "&nbsp;&nbsp;";
-                            }
-                        }
-                        echo "<br>";
-                    }
-                    break;
-
-                default;
-                    for ($i = 1; $i <= $row; $i++) {
-
-                        for ($j = 1; $j <= (2 * $row) - 1; $j++) {
-
-                            if ($j >= $row - ($i - 2) && $j <= $row + ($i - 2)) {
-                                echo "*";
-                            } else {
-                                echo "&nbsp;&nbsp;";
-                            }
-                        }
-                        echo "<br>";
-                    }
-                    for ($i = $row - 1; $i >= 1; $i--) {
-
-                        for ($j = 1; $j <= (2 * $row) - 1; $j++) {
-
-                            if ($j >= $row - ($i - 2) && $j <= $row + ($i - 2)) {
-                                echo "*";
-                            } else {
-                                echo "&nbsp;&nbsp;";
-                            }
-                        }
-                        echo "<br>";
-                    }
-                    break;
-            }
-        }
-    }
-    makeDiamondShape(9);
-    ?>
+    <div class="container">
+        <div class="diamond">
+            <?php makeDiamondShape(1); ?>
+        </div>
+    </div>
 </body>
 
 </html>
