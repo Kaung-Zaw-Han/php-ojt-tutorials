@@ -3,11 +3,11 @@ require_once 'libs/phpqrcode/qrlib.php';
 if (!is_dir("images/")) {
     mkdir("images/");
 }
-$success = "";
+$success = $error = "";
 if (isset($_POST['btnGenerator'])) {
     $qrName = $_POST['qr'];
     if (empty($qrName)) {
-        $error = "error";
+        $error = "QR name field is required";
     } else {
         $name = $qrName . '.png';
         $filePath = "images/" . $name;

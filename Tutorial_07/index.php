@@ -12,7 +12,7 @@ include "generate.php";
 </head>
 <body>
     <div class="container">
-        <div class="row mt-5">
+        <div class="row  mt-5">
             <div class="card w-50 mx-auto">
                 <div class="card-header">
                     <h1 class="text-center">QR Code Generator</h1>
@@ -21,6 +21,7 @@ include "generate.php";
                     <form action="" method="POST">
                         <label for="" class="form-label">QR Name</label>
                         <input type="text" name="qr" id="" placeholder="Enter QR Name" class="form-control">
+                        <small class="text-danger"><?php echo $error; ?></small>
                         <div>
                             <input type="submit" value="Generator" name="btnGenerator" class="btn btn-primary w-100 mt-3">
                         </div>
