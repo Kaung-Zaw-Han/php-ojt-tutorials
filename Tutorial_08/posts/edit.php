@@ -3,16 +3,14 @@ include("../database.php");
 $titleError = $contentError = "";
 if (isset($_GET['id'])) {
     $editId = $_GET['id'];
-    $getData = "SELECT * FROM tutorial08.post WHERE id=$editId";
+    $getData = "SELECT * FROM post WHERE id=$editId";
     $editResult = mysqli_query($conn, $getData);
     $post = mysqli_fetch_array($editResult);
 }
-
 if (isset($_POST['btnUpdate'])) {
     $title = $_POST['title'];
     $content = $_POST['content'];
     $id = $_POST['id'];
-
     if (empty($title) && empty($content)) {
         $titleError = "Title field is required";
         $contentError = "Content field is required";
@@ -34,7 +32,6 @@ if (isset($_POST['btnUpdate'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,7 +40,6 @@ if (isset($_POST['btnUpdate'])) {
     <link rel="stylesheet" href="../libs/css/bootstrap.min.css">
     <script src="../libs/js/bootstrap.min.js"></script>
 </head>
-
 <body>
     <div class="container">
         <div class="card mt-5">
@@ -78,5 +74,4 @@ if (isset($_POST['btnUpdate'])) {
         </div>
     </div>
 </body>
-
 </html>

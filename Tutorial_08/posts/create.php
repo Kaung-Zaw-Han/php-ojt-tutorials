@@ -1,10 +1,10 @@
 <?php
 include("../database.php");
+$title = $content = "";
 $titleError = $contentError = "";
 if (isset($_POST['btnCreate'])) {
     $title = $_POST['title'];
     $content = $_POST['content'];
-
     if (empty($title) && empty($content)) {
         $titleError = "Title field is required";
         $contentError = "Content field is required";
@@ -26,7 +26,6 @@ if (isset($_POST['btnCreate'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +34,6 @@ if (isset($_POST['btnCreate'])) {
     <link rel="stylesheet" href="../libs/css/bootstrap.min.css">
     <script src="../libs/js/bootstrap.min.js"></script>
 </head>
-
 <body>
     <div class="container">
         <div class="card mt-5">
@@ -46,12 +44,12 @@ if (isset($_POST['btnCreate'])) {
                 <form action="" method="POST">
                     <div class="mb-2">
                         <label for="" class="form-label">Title</label>
-                        <input type="text" class="form-control" name="title">
+                        <input type="text" class="form-control" name="title" value="<?php echo $title?>">
                         <small class="text-danger"><?php echo $titleError ?></small>
                     </div>
                     <div class="mb-2">
                         <label for="" class="form-label">Content</label>
-                        <textarea cols="30" rows="10" class="form-control" name="content"></textarea>
+                        <textarea cols="30" rows="10" class="form-control" name="content"><?php echo $content?></textarea>
                         <small class="text-danger"><?php echo $contentError ?></small>
                     </div>
                     <div class="mb-2">
@@ -67,5 +65,4 @@ if (isset($_POST['btnCreate'])) {
         </div>
     </div>
 </body>
-
 </html>

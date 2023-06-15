@@ -1,13 +1,18 @@
 <?php
 $serverName = "localhost";
 $userName = "root";
-$dbName = "tutorial08";
-$conn = mysqli_connect($serverName, $userName, 'root', $dbName);
+$conn = mysqli_connect($serverName, $userName, 'root');
 if (!$conn) {
     die("Connection failed" . mysqli_connect_error());
 } else {
-    // echo "Success Join";
 }
+$dbName = "tutorial08";
+$checkDatabase = "CREATE DATABASE IF NOT EXISTS $dbName";
+if ($conn->query($checkDatabase) === TRUE) {
+} else {
+    echo "Error creating database" . $conn->error;
+}
+mysqli_select_db($conn, $dbName);
 $sql = "CREATE TABLE IF NOT EXISTS Post (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   title VARCHAR(225),
@@ -17,12 +22,7 @@ $sql = "CREATE TABLE IF NOT EXISTS Post (
   updated_datetime timestamp default current_timestamp ON UPDATE CURRENT_TIMESTAMP
   )";
 if (mysqli_query($conn, $sql)) {
-    // echo "table created successfully";
 } else {
     echo "table created fail";
 }
 ?>
-
-
-
-

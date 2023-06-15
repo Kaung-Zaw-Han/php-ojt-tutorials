@@ -5,7 +5,7 @@ $posts = mysqli_query($conn, $sql);
 if (isset($_GET['id'])) {
     // echo $_GET['id'];
     $deleteId = $_GET['id'];
-    $deletePost = "DELETE FROM tutorial08.post WHERE id=$deleteId";
+    $deletePost = "DELETE FROM post WHERE id=$deleteId";
     $deleteResult = mysqli_query($conn, $deletePost);
     if ($deleteResult == true) {
         echo "<script>window.location='index.php'</script>";

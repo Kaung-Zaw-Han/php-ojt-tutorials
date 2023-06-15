@@ -1,17 +1,14 @@
 <?php
 include("../database.php");
 if (isset($_GET['id'])) {
-    // echo $_GET['id'];
     $viewId = $_GET['id'];
-    $read = "SELECT * FROM tutorial08.post WHERE id = $viewId";
+    $read = "SELECT * FROM post WHERE id = $viewId";
     $viewResult = mysqli_query($conn, $read);
     $post = mysqli_fetch_array($viewResult);
-    // echo gettype($post['created_datetime']);
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +17,6 @@ if (isset($_GET['id'])) {
     <link rel="stylesheet" href="../libs/css/bootstrap.min.css">
     <script src="../libs/js/bootstrap.min.js"></script>
 </head>
-
 <body>
     <div class="container">
         <div class="card mt-5">
@@ -39,5 +35,4 @@ if (isset($_GET['id'])) {
         </div>
     </div>
 </body>
-
 </html>
