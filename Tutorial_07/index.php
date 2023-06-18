@@ -9,6 +9,7 @@ include "generate.php";
     <title>Tutorial_07</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="libs/css/bootstrap.min.css">
+    <script src="libs/js/bootstrap.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -33,27 +34,28 @@ include "generate.php";
     <div class="mt-5"></div>
     <?php echo $success; ?>
     </div>
-    <div class="display-box  w-100">
-        <div class="card mx-auto">
+    <div class="display-box">
+        <div class="card w-100">
             <h2>QR List</h2>
-            <div class="card-body d-flex">
-                <?php
-                $folder = "images/";
-                if (is_dir($folder)) {
-                    $files = glob($folder . "*");
-                    foreach ($files as $file) {
-                        if (is_file($file) && $file != 'index.php') {
-                            echo '<div class="col-3 d-flex aligns-items-center justify-content-center">';
-                            echo '<img class="img-thumbnail w-75" src="' . $file . '">';
-                            echo basename($file);
-                            echo '</div>';
+            <div class="card-body">
+                <div class="row">
+                    <?php
+                    $folder = "images/";
+                    if (is_dir($folder)) {
+                        $files = glob($folder . "*");
+                        foreach ($files as $file) {
+                            if (is_file($file) && $file != 'index.php') {
+                                echo '<div class="col-md-4 mb-3">';
+                                echo '<img class="img-thumbnail d-block w-50 " src="' . $file . '">';
+                                echo basename($file);
+                                echo '</div>';
+                            }
                         }
                     }
-                }
-                ?>
+                    ?>
+                </div>
             </div>
         </div>
     </div>
 </body>
-<script src="libs/js/bootstrap.min.js"></script>
 </html>
