@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +9,6 @@
     <link rel="stylesheet" href="libs/css/bootstrap.min.css">
     <script src="libs/js/bootstrap.min.js"></script>
 </head>
-
 <body>
     <?php
     session_start();
@@ -60,9 +58,7 @@
                 <?php
                     unset($_SESSION['message']);
                 }
-
                 ?>
-
                 <?php
                 if (isset($_SESSION['error'])) {
                 ?>
@@ -72,9 +68,7 @@
                 <?php
                     unset($_SESSION['error']);
                 }
-
                 ?>
-
                 <div class="card mt-5">
                     <div class="card-header bg-secondary-subtle">
                         <h1 class="text-black  fs-2 text-center">Age Calculator</h1>
@@ -96,6 +90,4 @@
         </div>
     </div>
 </body>
-
-
 </html>
