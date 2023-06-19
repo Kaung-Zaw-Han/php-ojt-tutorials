@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+img{
+  width: 80px;
+  cursor: pointer;
+  border-radius: 50px;
+}
+ #choose {
+  display: none;
+ }
