@@ -3,7 +3,6 @@ include_once("upload.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +11,6 @@ include_once("upload.php");
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="libs/css/bootstrap.min.css">
 </head>
-
 <body>
     <?php
     if (isset($_SESSION['finalResult'])) {
@@ -54,18 +52,22 @@ include_once("upload.php");
                   <p class='text-center'><a href=''>$lastPath</a></p><br>
                   <p class='text-center'><a href=''>localhost/Tutorial_06/$filePath</a></p>
                   <form method='post'>
-                    <input type='submit' class='btn btn-danger w-75 text-white' name='delete' value='Delete'>
+                  <input type='hidden' name='deleteData' value='$filePath'>
+                    <input type='submit' class='btn btn-danger w-75 text-white' name='btnDelete' value='Delete'>
                   </form>
                   </div>
                   </div>";
             }
-            if (isset($_POST['delete'])) {
-                echo "<script> confirm('Want to delete?') </script>";
+            if (isset($_POST['btnDelete'])) {
+                $delete = $_POST['deleteData'];
+                $result = unlink($delete);
+                if ($result) {
+                    echo "<script>window.location='index.php'</script>";
+                }
             }
             ?>
         </div>
     </div>
 </body>
 <script src="libs/js/bootstrap.min.js"></script>
-
 </html>
